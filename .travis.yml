@@ -1,7 +1,6 @@
 # Configuration file for Travis CI test environment
 language: php
 php:
-  - 5.4
   - 5.5
 
 before_script:
