@@ -8,15 +8,13 @@ use Kohana;
 class SentinelFactory
 {
     /**
-     * @var SentinelBootstrapper
+     * @var null|array
      */
-    private $bootstrapper;
+    private $config;
 
     public function __construct()
     {
-        $config = Kohana::$config->load('sentinel')->get('config');
-
-        $this->bootstrapper = new SentinelBootstrapper($config);
+        $this->config = Kohana::$config->load('sentinel')->get('config');
     }
 
     /**
@@ -24,6 +22,6 @@ class SentinelFactory
      */
     public function create()
     {
-        return $this->bootstrapper->createSentinel();
+        return (new SentinelBootstrapper($this->config))->createSentinel();
     }
 }
