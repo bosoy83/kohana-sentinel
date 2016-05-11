@@ -9,5 +9,8 @@ return [
         'password'  => 'secret',
         'charset'   => 'utf8',
         'collation' => 'utf8_unicode_ci',
-    ]
+    ],
+
+
+    'config' => null // Use null if default config
 ];
